@@ -4,6 +4,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
   
   def index
+    # by_position is a def in model portfolio.rb
     @portfolio_items = Portfolio.by_position
   end
 
